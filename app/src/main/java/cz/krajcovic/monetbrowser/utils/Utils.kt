@@ -1,7 +1,5 @@
 package cz.krajcovic.monetbrowser.utils
 
-import android.util.Log
-
 class BaseUtils {
     companion object {
         private val TAG: String = BaseUtils::class.simpleName!!
@@ -16,7 +14,8 @@ class BaseUtils {
 
         fun log(message: String): Unit {
 //            Log.i(TAG, message)
-            System.out.println("DEBUG: $TAG: $message")
+//            System.out.println("DEBUG: $TAG: $message")
+            println("DEBUG: $TAG: $message")
         }
 
         fun maxOf(a: Int, b: Int): Int {
