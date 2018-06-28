@@ -1,5 +1,7 @@
 package cz.krajcovic.monetbrowser.tut
 
+import java.io.IOException
+
 class Derived(name: String, val lastName: String) : Base(name.capitalize().also { println("Argument for Base: $it") }) {
 
     init {
@@ -15,7 +17,7 @@ class Derived(name: String, val lastName: String) : Base(name.capitalize().also 
     }
 
 //    @Throws(IOException::class)
-    fun foo() {
+    fun throwException() {
         throw IOException()
     }
 }

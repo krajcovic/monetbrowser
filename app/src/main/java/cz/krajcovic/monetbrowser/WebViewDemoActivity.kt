@@ -9,18 +9,20 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
+// Using Kotlin Android Extensions
+// Using R.layout.activity_main from the 'main' source set
+import kotlinx.android.synthetic.main.activity_web_view_demo.*
+
 class WebViewDemoActivity : AppCompatActivity() {
     val TAG = WebViewDemoActivity::class.simpleName
 
-    lateinit var mainWebView: WebView
     lateinit var mainWebSettings: WebSettings
-    lateinit var etUrl: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view_demo)
 
-        mainWebView = findViewById(R.id.mainWebView);
+//        mainWebView = findViewById(R.id.mainWebView);
         //mainWebView.loadUrl("http://www.google.com")
 
         mainWebSettings = mainWebView.settings
@@ -29,10 +31,10 @@ class WebViewDemoActivity : AppCompatActivity() {
 
         mainWebView.addJavascriptInterface(WebAppInterface(this), "Android")
 
-        etUrl = findViewById(R.id.etUrl)
+//        etUrl = findViewById(R.id.etUrl)
 
-        val btn: Button = findViewById(R.id.btnGo)
-        btn.setOnClickListener(
+//        val btn: Button = findViewById(R.id.btnGo)
+        btnGo.setOnClickListener(
                 {
                     mainWebView.loadUrl(etUrl.text.toString())
                 }
