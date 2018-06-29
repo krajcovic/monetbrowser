@@ -43,10 +43,12 @@ class WebViewDemoActivity : AppCompatActivity() {
     }
 
     fun showToast(message: String) {
-        this.runOnUiThread({
-            Log.i(TAG, "showToast: " + message);
+        val validMessage = message ?: return
 
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        this.runOnUiThread({
+            Log.i(TAG, "showToast: " + validMessage);
+
+            Toast.makeText(this, validMessage, Toast.LENGTH_SHORT).show()
         })
     }
 }

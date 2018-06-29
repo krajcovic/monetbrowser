@@ -1,13 +1,20 @@
 package cz.krajcovic.monetbrowser.tut
 
+import org.junit.BeforeClass
 import org.junit.Test
-
-import org.junit.Assert.*
 import java.io.IOException
 
 class DerivedTest {
+    companion object {
+        lateinit var derived: Derived
 
-    val derived = Derived("Dusan", "Krajcovic")
+        @BeforeClass
+        @JvmStatic
+        fun beforeClass() {
+            derived = Derived("Dusan", "Krajcovic")
+        }
+    }
+
 
     @Test
     fun v() {

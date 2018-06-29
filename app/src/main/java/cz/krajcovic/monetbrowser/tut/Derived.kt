@@ -2,7 +2,7 @@ package cz.krajcovic.monetbrowser.tut
 
 import java.io.IOException
 
-class Derived(name: String, val lastName: String) : Base(name.capitalize().also { println("Argument for Base: $it") }) {
+class Derived(name: String, val lastName: String) : Base(name.capitalize().also { println("Argument for Base: $it") }, "TajemnaConstanta") {
 
     init {
         println("Initializing Derived")
@@ -16,7 +16,7 @@ class Derived(name: String, val lastName: String) : Base(name.capitalize().also 
         println("Derivated name=$name")
     }
 
-//    @Throws(IOException::class)
+    @Throws(IOException::class)
     fun throwException() {
         throw IOException()
     }
